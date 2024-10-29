@@ -1,4 +1,4 @@
-import { Nav, Offcanvas, Stack } from "react-bootstrap";
+import { Stack } from "react-bootstrap";
 import MyOptionLink from "./OptionLink";
 import MyOptionAccordion from "./OptionAccordion";
 
@@ -35,7 +35,7 @@ export default function MySidebar({show, onClose}: MySidebarProps) {
         x("Inicio","catalogo"),
         y("Recursos",[
             x("Nuevo recurso", "nuevo-recurso"),
-            x("Gestionar recursos", "gestionar-recusos"),
+            x("Gestionar recursos", "gestionar-recursos"),
         ]),
         y("Préstamos", [
             x("Nuevo préstamo", "nuevo-prestamo"),
@@ -43,13 +43,13 @@ export default function MySidebar({show, onClose}: MySidebarProps) {
         ]),
         y("Usuarios", [
             x("Nuevo lector", "nuevo-lector"),
-            x("Gestionar lectores", "gestionar-lector"),
+            x("Gestionar lectores", "gestionar-lectores"),
             x("Nuevo trabajador", "nuevo-trabajador"),
-            x("Gestionar trabajador", "admin-panel"), //Redirige a admin-panel
+            x("Gestionar trabajadores", "gestionar-trabajadores"), //Redirige a admin-panel
         ]),
         x("Estadísticas", "estadisticas"),
         x("Cerrar sesión", "/"),
-		// x("Panel Admin", "admin-panel"),
+		x("Panel Admin", "admin-panel"),
 		// x("Perfil", "perfil"),
 		// x("Catálogo", "catalogo"),
         // x("Ayuda", "ayuda"),

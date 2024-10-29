@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { getAllTexts, TextAPIObject } from "../api/api";
 import { Button, ButtonGroup, Table } from "react-bootstrap";
+import MyEditButton from "./EditButton";
+import MyDeleteButton from "./DeleteButton";
 
 function buildTableContent<T extends Object>(
 	colspan: number,
@@ -49,17 +51,17 @@ export function MyResourcesTable() {
 			<td>{book.edition}</td>
 			<td>{book.volume}</td>
 			<td>
-				<ButtonGroup aria-label="Basic example">
-					<Button variant="secondary">Actualizar</Button>
-					<Button variant="danger">Eliminar</Button>
-				</ButtonGroup>
+				<MyEditButton/>
+			</td>
+			<td>
+				<MyDeleteButton/>
 			</td>
 		</tr>
 	));
 
 	return (
 		<>
-			<Table striped bordered hover>
+			<Table striped bordered hover style={{ tableLayout: 'fixed', width: '100%' }}>
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -70,7 +72,8 @@ export function MyResourcesTable() {
 						<th>Páginas</th>
 						<th>Edición</th>
 						<th>Volumen</th>
-						<th>Opciones</th>
+						<th></th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>{tableContent}</tbody>

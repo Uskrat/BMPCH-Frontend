@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { getAllUsers, UserAPIObject } from "../api/api";
 import { Button, ButtonGroup, Table } from "react-bootstrap";
+import MyEditButton from "./EditButton";
+import MyDeleteButton from "./DeleteButton";
 
 function buildTableContent<T extends Object>(
 	colspan: number,
@@ -47,10 +49,10 @@ export function MyUsersTable() {
 			<td>{user.document}</td>
 			<td>{firstN(user.psk, 12)}</td>
 			<td>
-				<ButtonGroup aria-label="Basic example">
-					<Button variant="secondary">Actualizar</Button>
-					<Button variant="danger">Eliminar</Button>
-				</ButtonGroup>
+				<MyEditButton/>
+			</td>
+			<td>
+				<MyDeleteButton/>
 			</td>
 		</tr>
 	));
@@ -65,7 +67,8 @@ export function MyUsersTable() {
 						<th>Tipo de Documento</th>
 						<th>Documento</th>
 						<th>PSK</th>
-						<th>Operaciones</th>
+						<th></th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>{tableContent}</tbody>

@@ -19,6 +19,7 @@ import ManageBorrowings from "./pages/ManageBorrowings";
 import Statistics from "./pages/Statistics";
 import ManageReaders from "./pages/ManageReaders";
 import ManageWorkers from "./pages/ManageWorkers";
+import NewResource from "./pages/NewResource";
 
 const queryClient = new QueryClient();
 
@@ -34,7 +35,7 @@ function App() {
 						{/* Routes that use the layout */}
 						<Route path="/" element={<Layout />}>
 							<Route
-								path="catalogo"
+								path="inicio"
 								element={
 									<ProtectedRoute>
 										<Catalogue />
@@ -50,10 +51,10 @@ function App() {
 								}
 							/>
 							<Route
-								path="admin-panel"
+								path="nuevo-recurso"
 								element={
 									<ProtectedRoute>
-										<AdminPanel></AdminPanel>
+										<NewResource/>
 									</ProtectedRoute>
 								}
 							/>
@@ -94,6 +95,14 @@ function App() {
 								element={
 									<ProtectedRoute>
 										<Statistics/>
+									</ProtectedRoute>
+								}
+							/>
+							<Route
+								path="admin-panel"
+								element={
+									<ProtectedRoute>
+										<AdminPanel></AdminPanel>
 									</ProtectedRoute>
 								}
 							/>

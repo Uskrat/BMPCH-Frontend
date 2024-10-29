@@ -32,7 +32,7 @@ export default function MySidebar({show, onClose}: MySidebarProps) {
 	const sidebarLinks = [
 		//x("Menu", "/"),
         //y("Menu", [x("Submenu", "/")])
-        x("Inicio","catalogo"),
+        x("Inicio","inicio"),
         y("Recursos",[
             x("Nuevo recurso", "nuevo-recurso"),
             x("Gestionar recursos", "gestionar-recursos"),
@@ -73,7 +73,7 @@ export default function MySidebar({show, onClose}: MySidebarProps) {
     return(
         <>
             <div className={`my-sidebar ${show ? '' : 'close'}`}>
-                <Stack direction="horizontal" className="align-items-center justify-content-between">
+                <Stack direction="horizontal" className="align-items-center justify-content-between mb-3">
                     <h6 style={{color:'#808080',  margin: '0'}}>{sidebarTittle}</h6>
                     <div>
                         <button onClick={onClose} className="close-button ">X</button>

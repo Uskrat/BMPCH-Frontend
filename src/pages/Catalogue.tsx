@@ -1,19 +1,17 @@
-import { Card, Form, Button} from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import BookGroup from "../components/BookGroup";
+import MyMainContentHeader from "../components/MainContentHeader";
 
 function Catalogue() {
+
+	const title = "INICIO";
+    const subtitle = "";
+
+    const header = MyMainContentHeader(title, subtitle, true);
+
 	return (
 		<>
-			<h1>Catálogo de Textos</h1>
-			<Card>
-				<Card.Body>
-					<Form className="d-flex">
-						<Form.Control type="search" placeholder="Buscar" className=" mr-sm-2" />
-						<Button type="submit">Buscar</Button>
-					</Form>
-				</Card.Body>
-			</Card>
-
+			{header}
 			<Card>
 				<Card.Body>
 					<BookGroup></BookGroup>

@@ -16,7 +16,7 @@ export default function MySearchForm() {
                             display: 'flex',
                             justifyContent: 'flex-end',
                             alignItems: 'center',
-                            maxWidth: '200px',
+                            maxWidth: '2500px',
                         }}
                     >
                         Buscar

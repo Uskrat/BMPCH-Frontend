@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Accordion } from "react-bootstrap";
 
 export default function MyOptionAccordion(title: string, links: React.ReactNode[]) {
     const [isOpen, setIsOpen] = useState(false);
@@ -8,32 +7,36 @@ export default function MyOptionAccordion(title: string, links: React.ReactNode[
 
     return(
         <>
-            <Accordion
-                defaultActiveKey="1"
-                style={{width: '100%'}}
-            >
-                <Accordion.Item eventKey="0" style={{ backgroundColor: '#1f283a', border: 'none' }}>
-                    <Accordion.Header
-                        onClick={handleToggle}
-                        style={{    
-                            cursor: 'pointer',
-                            border: 'none',
-                            backgroundColor: '#1f283a',
-                        }}
-                    >
-                        {title}
-                    </Accordion.Header>
-                    <Accordion.Body
+            <div className="custom-accordion" style={{ width: '100%' }}>
+                <div
+                    className="accordion-header"
+                    onClick={handleToggle}
+                    style={{
+                        backgroundColor: '#1f283a',
+                        cursor: 'pointer',
+                        color: '#06b195',
+                        padding: '0px',
+                        fontWeight: 'bold',
+                        transition: 'background-color 0.3s ease',
+                    }}
+                >
+                    {title}
+                </div>
+                {isOpen && (
+                    <div
+                        className="accordion-body"
                         style={{
                             backgroundColor: '#1f283a',
                             color: '#06b195',
-                            border: 'none',
+                            padding: '5px',
+                            overflow: 'hidden',
+                            transition: 'max-height 0.3s ease',
                         }}
                     >
                         {links}
-                    </Accordion.Body>
-                </Accordion.Item>
-            </Accordion>
+                    </div>
+                )}
+            </div>
         </>   
     );
 }
